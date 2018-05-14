@@ -19,3 +19,8 @@
 .dashboard-card-content {
   text-align: center;
 }
+
+.price {
+  display: flex;
+  justify-content: flex-end;
+}

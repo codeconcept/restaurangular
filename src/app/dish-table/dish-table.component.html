@@ -14,14 +14,16 @@
       <mat-cell *matCellDef="let row">{{row.name}}</mat-cell>
     </ng-container>
 
+    <!-- Price Column -->
+    <ng-container matColumnDef="price">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Prix</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{row.price | currency:'EUR':'symbol'}}</mat-cell>
+    </ng-container>
+
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
     <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
   </mat-table>
 
-  <mat-paginator #paginator
-    [length]="dataSource.data.length"
-    [pageIndex]="0"
-    [pageSize]="3"
-    [pageSizeOptions]="[ 3, 5, 10]">
+  <mat-paginator #paginator [length]="dataSource.data.length" [pageIndex]="0" [pageSize]="3" [pageSizeOptions]="[ 3, 5, 10]">
   </mat-paginator>
 </div>
