@@ -1,0 +1,9 @@
+.mat-h1 {
+  font: 400 24px/32px Roboto, "Helvetica Neue", sans-serif;
+  margin: 0 0 16px 16px;
+}
+
+.carte {
+    width: 80%;
+    margin-left: 33px;
+}

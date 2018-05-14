@@ -7,9 +7,8 @@ import { Component } from '@angular/core';
 })
 export class MainDashComponent {
   cards = [
-    { title: 'A la carte', cols: 2, rows: 1 },
-    { title: 'Burgers', cols: 1, rows: 1 },
-    { title: 'Galettes/crêpes', cols: 1, rows: 2 },
-    { title: 'Pizza', cols: 1, rows: 1 }
+    { title: 'Burgers', cols: 2, rows: 1 },
+    { title: 'Galettes/crêpes', cols: 2, rows: 1 },
+    { title: 'Pizza', cols: 2, rows: 1 }
   ];
 }
