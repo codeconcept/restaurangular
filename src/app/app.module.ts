@@ -1,6 +1,7 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes, Router } from "@angular/router";
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { AppComponent } from "./app.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
@@ -18,7 +19,13 @@ import {
   MatMenuModule,
   MatTableModule,
   MatPaginatorModule,
-  MatSortModule
+  MatSortModule,
+  MatInputModule,
+  MatFormFieldModule,
+  MatDatepickerModule,
+  MatNativeDateModule,
+  MAT_DATE_LOCALE,
+  MatSelectModule
 } from "@angular/material";
 import { HomeComponent } from "./home/home.component";
 import { CarteComponent } from "./carte/carte.component";
@@ -49,6 +56,8 @@ const routes: Routes = [
     BrowserModule,
     BrowserAnimationsModule,
     LayoutModule,
+    ReactiveFormsModule,
+    FormsModule,
     MatToolbarModule,
     MatButtonModule,
     MatDividerModule,
@@ -56,14 +65,19 @@ const routes: Routes = [
     MatIconModule,
     MatListModule,
     MatCardModule,
-    RouterModule.forRoot(routes),
+    MatInputModule,
+    MatFormFieldModule,
+    MatNativeDateModule,
     MatGridListModule,
     MatMenuModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    MatDatepickerModule,
+    MatSelectModule,
+    RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [{provide: MAT_DATE_LOCALE, useValue: 'fr-FR'},],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
