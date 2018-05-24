@@ -1,0 +1,21 @@
+{
+  "version": 1.0,
+  "events": [
+    {
+      "id": 0,
+      "title": "test"
+    },      
+    {
+      "id": 1,
+      "title": "soirée foot"
+    },
+    {
+      "id": 2,
+      "title": "rugby 6 nations"
+    },
+    {
+      "id": 3,
+      "title": "soirée karaoké"
+    }
+  ]
+}

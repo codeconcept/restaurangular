@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
-import { debounceTime, map, tap } from 'rxjs/operators';
+import { debounceTime, map, tap, switchMap } from 'rxjs/operators';
+
+import { ScheduleService } from '../services/schedule.service';
 
 @Component({
   selector: 'cc-schedule',
@@ -11,23 +13,17 @@ import { debounceTime, map, tap } from 'rxjs/operators';
 export class ScheduleComponent implements OnInit {
   searchTerm = new FormControl();
   searchTerms$: Observable<string> = this.searchTerm.valueChanges;
-  result = '';
+  result = {};
 
-  constructor() { }
+  constructor(private scheduleService: ScheduleService) { }
 
   ngOnInit() {
     this.searchTerms$
       .pipe(
-        tap(x => console.log(x)),
-        map(term => term.toUpperCase()),
-        map(uppercased => this.reverse(uppercased)),
         debounceTime(2000),
+        switchMap(term => this.scheduleService.search(term))
       )
-      .subscribe(term => this.result = term)
-  }
-
-  reverse(word) {
-    return word.split('').reverse().join('');
+      .subscribe(data => this.result = data, err => console.error(err));
   }
 
 }
