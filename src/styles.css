@@ -1,1 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
+h1, h2 {
+  font: 400 24px/32px Roboto, "Helvetica Neue", sans-serif;
+  margin: 0 0 16px 16px;
+}

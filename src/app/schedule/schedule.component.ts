@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { debounceTime, map, tap, switchMap } from 'rxjs/operators';
 
 import { ScheduleService } from '../services/schedule.service';
+import { EveningEvent } from '../models/evening-event.interface';
 
 @Component({
   selector: 'cc-schedule',
@@ -13,14 +14,14 @@ import { ScheduleService } from '../services/schedule.service';
 export class ScheduleComponent implements OnInit {
   searchTerm = new FormControl();
   searchTerms$: Observable<string> = this.searchTerm.valueChanges;
-  result = {};
+  result:EveningEvent[] = [];
 
   constructor(private scheduleService: ScheduleService) { }
 
   ngOnInit() {
     this.searchTerms$
       .pipe(
-        debounceTime(2000),
+        debounceTime(1000),
         switchMap(term => this.scheduleService.search(term))
       )
       .subscribe(data => this.result = data, err => console.error(err));
