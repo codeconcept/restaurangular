@@ -28,7 +28,7 @@
             <p *ngFor="let galette of galettes">
               <span>{{galette.title}} : </span>
               <span>{{galette.description}}</span>
-              <span class="price">{{galette.price | currency:'EUR':true:'1.2-2'}}</span>
+              <span class="price">{{galette.price | currency:'EUR':symbol:'1.2-2'}}</span>
               <mat-divider></mat-divider>              
             </p>
           </div>
@@ -36,7 +36,7 @@
             <p *ngFor="let pizza of pizzas">
               <span>{{pizza.title}} : </span>
               <span>{{pizza.description}} </span>
-              <span class="price">{{pizza.price | currency:'EUR':true:'1.2-2'}}</span>
+              <span class="price">{{pizza.price | currency:'EUR':symbol:'1.2-2'}}</span>
               <mat-divider></mat-divider>              
             </p>
           </div>
