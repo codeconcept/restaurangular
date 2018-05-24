@@ -1,9 +1,12 @@
 <h2>Soirées à thèmes</h2>
-<form>
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="jeu, karaoke, sport ..." [formControl]="searchTerm">
-  </mat-form-field>
-</form>
+
+<div>
+  <form>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="jeu, karaoke, sport ..." [formControl]="searchTerm">
+    </mat-form-field>
+  </form>
+</div>
 
 <div *ngIf="result.length > 0">
   <mat-card *ngFor="let res of result">
