@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'cc-phone',
@@ -9,9 +9,16 @@ export class PhoneComponent implements OnInit {
   @Input()
   user: any;
 
+  @Output()
+  zoom = new EventEmitter<string>();
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  displayNumber() {
+    this.zoom.emit(this.user.phoneNumber);
   }
 
 }
